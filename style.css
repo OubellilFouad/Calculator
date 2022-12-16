@@ -12,6 +12,7 @@
     background-color: lightgreen;
 }
 .calcBody{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -30,6 +31,20 @@
     padding: 15px;
     font-size: 18px;
 }
+.clear{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    left: 30px;
+    top: 36px;
+    cursor: pointer;
+}
 .calcInput{
     display: flex;
     width: 100%;
@@ -46,7 +61,7 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 4px;
 }
-.num,.op{
+.num,.op,.opeq{
     padding: 15px;
     font-size: 17px;
 }
