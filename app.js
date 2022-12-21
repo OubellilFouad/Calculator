@@ -121,12 +121,10 @@ operations.forEach((operation) => {
 });
 equal.addEventListener('click', () => {
   if (display.textContent === '') {
-    console.log('hey');
+    // empty
   } else {
     firstValue.push(parseInt(display.textContent, 10));
-    console.log(firstValue, currentOperation);
     clearDisplay();
-    console.log(operate(firstValue, secondValue, currentOperation));
     updateDisplay(operate(firstValue, secondValue, currentOperation));
     resetVals();
   }
