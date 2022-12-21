@@ -33,14 +33,12 @@ function operate(num1, num2, op) {
         } else {
           result = add(result, num1[i + 1]);
         }
-        console.log(result);
         break;
       case 'substract':
         if (result === 0) { result = substract(num1[i], num1[i + 1]); } else { result = substract(result, num1[i + 1]); }
         break;
       case 'multiply':
         if (result === 0) { result = multiply(num1[i], num1[i + 1]); } else { result = multiply(result, num1[i + 1]); }
-        console.log(result);
         break;
       case 'devide':
         if (result === 0) { result = devide(num1[i], num1[i + 1]); } else { result = devide(result, num1[i + 1]); }
@@ -70,52 +68,44 @@ numbers.forEach((number) => {
 clear.addEventListener('click', () => { clearDisplay(); });
 operations.forEach((operation) => {
   operation.addEventListener('click', () => {
-    if (display.textContent === '') { /* empty */ } else {
-      if (currentOperation.length === 0) {
-        switch (operation.textContent) {
-          case '+':
-            currentOperation.push('add');
-            break;
-          case '-':
-            currentOperation.push('substract');
-            break;
-          case 'x':
-            currentOperation.push('multiply');
-            break;
-          case '/':
-            currentOperation.push('devide');
-            break;
-          default:
-            break;
-        }
-        firstValue.push(parseInt(display.textContent, 10));
-        clearDisplay();
-      } else {
-        switch (operation.textContent) {
-          case '+':
-            currentOperation.push('add');
-            break;
-          case '-':
-            currentOperation.push('substract');
-            break;
-          case 'x':
-            currentOperation.push('multiply');
-            break;
-          case '/':
-            currentOperation.push('devide');
-            break;
-          default:
-            break;
-        }
-        // if(firstValue.length > secondValue.length){
-        //     secondValue.push(parseInt(display.textContent));
-        // }else{
-        //     firstValue.push(parseInt(display.textContent));
-        // }
-        firstValue.push(parseInt(display.textContent, 10));
-        clearDisplay();
+    if (display.textContent === '') { /* empty */ } else if (currentOperation.length === 0) {
+      switch (operation.textContent) {
+        case '+':
+          currentOperation.push('add');
+          break;
+        case '-':
+          currentOperation.push('substract');
+          break;
+        case 'x':
+          currentOperation.push('multiply');
+          break;
+        case '/':
+          currentOperation.push('devide');
+          break;
+        default:
+          break;
       }
-      console.log(currentOperation, firstValue);
+      firstValue.push(parseInt(display.textContent, 10));
+      clearDisplay();
+    } else {
+      switch (operation.textContent) {
+        case '+':
+          currentOperation.push('add');
+          break;
+        case '-':
+          currentOperation.push('substract');
+          break;
+        case 'x':
+          currentOperation.push('multiply');
+          break;
+        case '/':
+          currentOperation.push('devide');
+          break;
+        default:
+          break;
+      }
+      firstValue.push(parseInt(display.textContent, 10));
+      clearDisplay();
     }
   });
 });
